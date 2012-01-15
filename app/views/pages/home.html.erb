@@ -1,0 +1,68 @@
+
+
+<table class="profile" summary="Profile information">
+  <tr>
+    <td class="main">
+      <h1>
+Welcome
+      </h1>
+<br>
+<%= image_tag("mission_statement.jpg", :class => "round", :width =>"700") %>
+<br>      
+<hr>
+<br>
+
+      <h1>
+News
+      </h1>
+
+<%=render :template => "news_admins/index.html.erb" %>
+
+    <td class="sidebar round">
+
+      <p>
+<h1>Enquiry service</h1>
+      </p>
+<hr>
+<h4>
+<p>We can produce a full biodiversity information report for a site or geographical area within five days.</p>
+
+<p>To request a report, please visit our <%= link_to "enquiry service page.", enquiry_path %></p>
+</h4>
+<br>
+<br>
+<br>
+
+      <p>
+<h1>Submit your Sightings</h1>
+      </p>
+<br>
+<hr>
+<h4>
+<p>you can news_admin your commnet and submit you picture of sightings by visit our <%= link_to "Sightings Submit page.", sightings_path %></p>
+</h4>
+<br>
+<br>
+<br>
+      <p>
+<h1>Current Surveys</h1>
+      </p>
+<hr>
+<h4>
+    <li>Hedgerow surveying</li>
+    <li>Importing of Sussex Ornithological Society dataset</li>
+    <li>Applying species data to the habitat potential mapping of the proposed South Downs National Park</li>
+    <li>Cross referencing the vascular plant</li>
+    <li>Identifying the location of potential Floodplain woodland sites in Sussex</li>
+    <p style="text-align:right"><%= link_to "get involved ", enquiry_path %></p>
+</h4>
+<br>
+    </td>
+    </td>
+  </tr>
+</table>
+
+
+
+
+

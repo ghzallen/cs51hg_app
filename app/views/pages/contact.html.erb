@@ -1,0 +1,43 @@
+<h1>Contact Us</h1>
+
+
+	
+	<table style="width:480px;border:0px;margin:auto;padding:10px;margin:10px;">
+		<tr>
+
+			<td style="vertical-align:top;width:230px;">
+				<h4>Head Office</h4>
+  				<p>
+					Surrey Wildlife Trust<br/>
+					School Lane<br/>
+					Pirbright<br/>
+					Woking<br/>
+
+					Surrey<br/>
+					GU24 0JN
+				</p>
+			</td>
+			<td style="vertical-align:top;padding:10px;margin:10px;width:250px;">
+				<p>
+					<b>Telephone</b> : 01483 795440
+				</p>
+
+				
+				<p>
+					<b>Fax</b> : 01483 486505
+				</p>
+				
+				<p>
+					<b>Email</b> : <a href="mailto:info@surreywt.org.uk">info@surreywt.org.uk</a>
+				</p>
+
+			</td>
+		</tr>
+	</table>
+	
+<h1>File Upload</h1>
+<%= form_tag({:action =>'contact'}, :multipart => true)%>
+<p><label for="upload_file">Select File</label> : 
+<%= file_field 'upload', 'datafile' %></p>
+<%= submit_tag "Upload" %>
+</form> 

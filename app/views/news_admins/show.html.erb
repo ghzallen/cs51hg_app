@@ -1,0 +1,27 @@
+
+<h2><p>
+  <strong>Title:</strong>
+  <%= @news_admin.title %>
+</p></h2>
+
+<%= form_for @news_admin, :html => {:multipart => true} do |f| %>
+<%=f.fields_for :news_pictures do |news_picture_fields| %>
+  <% unless news_picture_fields.object.new_record? %>
+
+<p>
+<%= link_to image_tag(news_picture_fields.object.news_picture.url(:large)), news_picture_fields.object.news_picture.url(:original) %>
+</p>
+
+<% end %>
+<% end %>
+<% end %>
+
+<p>
+  <strong>Content:</strong>
+  <%= @news_admin.content %>
+</p>
+<p>
+  <%= link_to "Edit", edit_news_admin_path(@news_admin) %> |
+  <%= link_to "Main page", root_path %>
+</p>
+  <%= button_to  "Delete", @news_admin, :confirm => 'Are you sure?', :method => :delete %> 

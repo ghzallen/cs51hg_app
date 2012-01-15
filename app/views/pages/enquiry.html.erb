@@ -1,0 +1,14 @@
+<h1>Enquiry</h1>
+<h5><p>The Sussex Biodiversity Record Centre provides a biodiversity enquiry service, also known as a data search. The information presented in an SxBRC desktop biodiversity report is made as reader-friendly as possible, with explanations given of the terms used and legislation cited. </p></h5>
+    <p>
+<div class="download_button">
+<%= link_to "Download Application Form",:action=>"tools",:filename=>"info-request-form.pdf", :class => "signup_button round" %>
+</div>
+    </p>
+
+<h1>File Upload</h1>
+<%= form_tag({:action =>'contact'}, :multipart => true)%>
+<p><label for="upload_file">Select File</label> : 
+<%= file_field 'upload', 'datafile' %></p>
+<%= submit_tag "Upload" %>
+</form> 

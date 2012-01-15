@@ -1,0 +1,30 @@
+<header>
+  <%= link_to logo, root_path %>
+<div class="user">
+    <ul>
+      <% if signed_in? %>
+      <li><%= link_to "Add new admin", signup_path %></li>
+      <li><%= link_to "Admins", users_path %></li>
+      <li><%= link_to "Upload News", new_news_admin_path %></li>
+      <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+      
+      <% end %>
+      <% if signed_in? %>
+      <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+      <% end %>
+</h>
+    </ul>
+	</div>
+  <%= image_tag("normal_Bird_Bittern_Tim_Tenton_.jpg", :alt => "Sample App", :class => "round", :width =>"1010") %>
+  <nav class="round">
+    <ul>
+      <li><%= link_to "Home", root_path %>|</li>
+      <li><%= link_to "Enquiry Service", enquiry_path %>|</li>  
+      <li><%= link_to "Recording Tools", tools_path %>|</li>  
+      <li><%= link_to "Sightings Submit", sightings_path %>|</li>
+      <li><%= link_to "Support", support_path %></li>
+  	
+
+    </ul>
+  </nav>
+</header>

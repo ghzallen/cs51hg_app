@@ -1,0 +1,39 @@
+
+<% for news_admin in @news_admins %>
+
+  <div class="news_admin">
+
+     <h2>Story Title:      <%= link_to news_admin.title, news_admin_path(news_admin) %></h2>
+<p>
+Upload Date:<%= news_admin.created_at %>
+</p>
+<%= form_for news_admin, :html => {:multipart => true} do |f| %>
+<%=f.fields_for :news_pictures do |news_picture_fields| %>
+  <% unless news_picture_fields.object.new_record? %>
+
+<p>
+<%= image_tag(news_picture_fields.object.news_picture.url(:medium)) %>
+</p>
+
+<% end %>
+<% end %>
+<% end %>
+
+
+     <p>
+  <%=news_admin.content %>
+     </p>
+<% if signed_in? %>
+     <p>
+      <%= link_to "Edit News", edit_news_admin_path(news_admin) %> |
+     </p>
+<%end%>
+
+   </div>
+<hr />
+<% end %>
+
+<%= will_paginate @news_admins %> 
+
+<br>
+<br>

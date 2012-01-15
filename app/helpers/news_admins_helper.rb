@@ -1,0 +1,2 @@
+module NewsAdminsHelper
+end

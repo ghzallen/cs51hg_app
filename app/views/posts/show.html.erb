@@ -1,0 +1,25 @@
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+<p>
+  <strong>Content:</strong>
+  <%= @post.content %>
+</p>
+<%= form_for @post, :html => {:multipart => true} do |f| %>
+<%=f.fields_for :assets do |asset_fields| %>
+  <% unless asset_fields.object.new_record? %>
+
+<p>
+<%= link_to image_tag(asset_fields.object.asset.url(large)), asset_fields.object.asset.url(:original) %>
+</p>
+
+<% end %>
+<% end %>
+<% end %>
+<p>
+  <%= link_to "Update or Edit", edit_post_path(@post) %> |
+  <%= link_to "Main page", posts_path %>
+</p>
+  <%= button_to  "Delete", @post, :confirm => 'Are you sure?', :method => :delete %> 
