@@ -28,7 +28,8 @@
      </p>
 <% if signed_in? %>
      <p>
-      <%= link_to "Edit", edit_post_path(post) %> |
+      <%= link_to "Edit", edit_post_path(post) %> 
+      <%= button_to  "Delete", @post, :confirm => 'Are you sure?', :method => :delete %> 
      </p>
 <%end%>
    </div>

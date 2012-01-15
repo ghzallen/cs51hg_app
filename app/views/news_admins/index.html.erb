@@ -25,7 +25,8 @@ Upload Date:<%= news_admin.created_at %>
      </p>
 <% if signed_in? %>
      <p>
-      <%= link_to "Edit News", edit_news_admin_path(news_admin) %> |
+      <%= link_to "Edit News", edit_news_admin_path(news_admin) %> 
+      <%= button_to  "Delete", @news_admin, :confirm => 'Are you sure?', :method => :delete %> 
      </p>
 <%end%>
 
