@@ -39,4 +39,10 @@ before_filter :authenticate, :only => [:index]
       render :action => 'edit'
     end
 end
+
+  def destroy
+    @news_admin = NewsAdmin.find(params[:id])
+    @news_admin.destroy 
+    redirect_to root_path, :notice => "Successfully destroyed post."
+  end
 end
